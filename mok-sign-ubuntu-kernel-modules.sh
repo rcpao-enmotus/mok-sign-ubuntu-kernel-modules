@@ -6,13 +6,14 @@
 # kmodsign sha512 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der vmmon.ko
 
 
-# VMware Workstation 14
+# VMware Workstation 14-15
 # /usr/src/linux-headers-$(uname -r)/scripts/sign-file $(modinfo -n vmmon)
 # /usr/src/linux-headers-$(uname -r)/scripts/sign-file $(modinfo -n vmnet)
 for filename in vmmon vmnet; do
 	sudo kmodsign sha512 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der  $(modinfo -n $filename)
 	echo "$filename"
 done
+sudo service vmware start
 
 
 # NVIDIA drivers
