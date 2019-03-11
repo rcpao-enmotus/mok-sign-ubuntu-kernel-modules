@@ -13,7 +13,17 @@ for filename in vmmon vmnet; do
 	sudo kmodsign sha512 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der  $(modinfo -n $filename)
 	echo "$filename"
 done
-sudo service vmware start
+sudo service vmware restart
+
+
+# VirtualBox 6.0
+# /usr/src/linux-headers-$(uname -r)/scripts/sign-file $(modinfo -n vboxdrv)
+for filename in vboxdrv; do
+	sudo kmodsign sha512 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der  $(modinfo -n $filename)
+	echo "$filename"
+done
+sudo modprobe vboxdrv
+sudo service virtualbox restart
 
 
 # NVIDIA drivers
