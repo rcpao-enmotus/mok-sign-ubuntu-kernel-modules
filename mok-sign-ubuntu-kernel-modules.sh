@@ -5,6 +5,9 @@
 # shows Ubuntu 18.04.1 default location of MOK.{priv,der}
 # kmodsign sha512 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der vmmon.ko
 
+# https://wiki.ubuntu.com/UEFI/SecureBoot/DKMS
+# sudo update-secureboot-policy --enroll-key
+
 
 # VMware Workstation 14-15
 # /usr/src/linux-headers-$(uname -r)/scripts/sign-file $(modinfo -n vmmon)
