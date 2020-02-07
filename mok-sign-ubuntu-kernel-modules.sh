@@ -10,6 +10,9 @@
 # shows Ubuntu 18.04.1 default location of MOK.{priv,der}
 # kmodsign sha512 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der vmmon.ko
 
+# https://wiki.ubuntu.com/UEFI/SecureBoot/DKMS
+# sudo update-secureboot-policy --enroll-key
+
 
 # https://wiki.ubuntu.com/UEFI/SecureBoot/DKMS
 # sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
