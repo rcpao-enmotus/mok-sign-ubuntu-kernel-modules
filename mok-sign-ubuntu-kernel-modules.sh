@@ -24,6 +24,11 @@
 # sudo mokutil --delete MOK-0002.der
 
 
+# https://wiki.ubuntu.com/UEFI/SecureBoot/Signing
+# To validate a signature, you will still need the public part of the signing certificate, in PEM form:
+# sbverify --cert path/to/cert.crt efi_binary
+
+
 # VMware Workstation 14-15
 # /usr/src/linux-headers-$(uname -r)/scripts/sign-file $(modinfo -n vmmon)
 # /usr/src/linux-headers-$(uname -r)/scripts/sign-file $(modinfo -n vmnet)
